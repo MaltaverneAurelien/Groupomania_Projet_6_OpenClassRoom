@@ -1,0 +1,65 @@
+/**************** CREATE POSTS ****************/
+.createTextArea {
+    background-color: #F2E9E4;
+    border: 3px solid #22223B;
+    color: #22223B;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    height: 150px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: vertical;
+}
+.createPostTitre {
+  margin-left: auto;
+  width: 90%;
+  color: #F2E9E4;
+}
+.createPost--titre {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 6px;
+}
+.createPost--text {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 6px;
+}
+.row--create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.row--submit--post {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 50%;
+}
+.createPost--btn {
+  background-color: #F2E9E4;
+  border: 2px dashed #22223B;
+  color: #22223B;
+  padding: 8px 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.createPost--btn:hover {
+  background-color: #22223B;
+  border: 2px dashed #F2E9E4;
+  color: #F2E9E4;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

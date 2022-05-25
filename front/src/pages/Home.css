@@ -1,0 +1,229 @@
+/**************** HOME TITRE ****************/
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home--logo {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homeTitre {
+  display: flex;
+  align-items: center;
+  color: #F2E9E4;
+  margin: 0;
+  cursor:default;
+}
+.home--post {
+  display: flex;
+  color: #F2E9E4;
+  width: 700px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.btn--cree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2E9E4;
+  border: 3px solid #22223B;
+  color: #22223B;
+  width: 50px;
+  margin-left: auto;
+  padding: 5px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+.btn--cree:hover {
+  background-color: #22223B;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border: 2px solid #9A8C98;
+  color: #F2E9E4;
+}
+/**************** HOME POST ****************/
+
+.home--post--user {
+    display: flex;
+    background-color: #F2E9E4;
+    border: 2px solid #C9ADA7;
+    border-radius: 6px;
+    color: #F2E9E4;
+    width: 900px;
+    height: 500px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+.home--post--username--container {
+  display: flex;
+  margin-bottom: 15px;
+}
+.home--post--username {
+  color: #4A4E69;
+  font-weight: bold;
+  font-size: 16px;
+}
+.home--post--date {
+  color: #4A4E69;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: auto;
+}
+.home--post--title {
+  color: #22223B;
+  font-weight: bold;
+  font-size: 23px;
+}
+.home--post--text {
+  text-align: justify;
+  color: #4A4E69;
+  width: 90%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+.home--text--container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+}
+.home--image--container {
+  width: 50%;
+  height: auto;
+}
+.home--image {
+  width : 100%; 
+  height : 100%;
+}
+.home--link {
+  height: 90%;
+}
+/**************** HOME POST BUTTON ****************/
+.home--post--btn {
+  display: flex;
+  justify-content: space-around;
+}
+.btn--post {
+  display: flex;
+  margin-left: auto;
+}
+.btn--home--user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2E9E4;
+  border: 2px solid #22223B;
+  color: #22223B;
+  width: 100px;
+  margin: 5px;
+  padding: 5px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+.btn--home--user:hover {
+  background-color: #22223B;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border: 2px solid #9A8C98;
+  color: #F2E9E4;
+}
+.comment--style {
+  background-color: #4A4E69;
+  border: 3px solid #C9ADA7;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px;
+  padding: 5px;
+  color:#F2E9E4;
+  font-size: 20px;
+}
+.comment--style svg{
+  margin-right: 5px;
+}
+.modify--style {
+  background-color: #4A4E69;
+  border: 3px solid #C9ADA7;
+  color: #F2E9E4;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modify--style:hover {
+  background-color: #F2E9E4;
+  border: 3px solid #4A4E69;
+  color: #729b79;
+}
+/**************** Like / Dislike ****************/
+.like--box {
+  display: flex;
+}
+.like--style {
+  background-color: #4A4E69;
+  border: 3px solid #C9ADA7;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin: 10px;
+  padding: 5px;
+  color: #729b79;
+  font-size: 20px;
+  cursor: pointer;
+}
+.dislike--style {
+  background-color: #4A4E69;
+  border: 3px solid #C9ADA7;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  padding: 5px;
+  margin: 10px;
+  color: #e54b4b;
+  font-size: 20px;
+  cursor: pointer;
+}
+.like--style svg {
+  margin-right: 5px;
+}
+.dislike--style svg {
+  margin-right: 5px;
+}
+/**************** Media Queries ****************/
+@media screen and (max-width: 750px) {
+  .home--post, .home--post--user {
+    width: 90%;
+  }
+  .home--image--container {
+    width: 100%;
+  }
+  .home--text--container {
+    width: 100%;
+  }
+  .home--post--user {
+    flex-direction: column;
+  }
+  .home--ul {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,43 @@
+/**************** LOGIN ****************/
+.login--col-15 {
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+  }
+  .login--col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  .loginTitre {
+    color: #F2E9E4;
+  }
+  .row--login:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row--submit--login {
+    width: 15%;
+    margin-top: 20px;
+  }
+  .btn--login {
+    background-color: #F2E9E4;
+    border: 3px solid #22223B;
+    width: 200px;
+    color: #22223B;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    transition-duration: 0.4s;
+  }
+  .btn--login:hover {
+    background-color: #22223B;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 2px solid #9A8C98;
+    color: #F2E9E4;
+  }

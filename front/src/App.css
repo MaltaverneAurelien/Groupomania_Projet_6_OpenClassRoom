@@ -1,0 +1,22 @@
+#root {
+  max-width: 1920px; /* Définition de la taille maximal en pixels */
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background: #4A4E69;
+  margin: 0 auto;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+}
+a, li, ul {
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 20px;
+}

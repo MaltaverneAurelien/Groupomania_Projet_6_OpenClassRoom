@@ -1,0 +1,28 @@
+.row--modify--comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.commentModifyTextArea {
+    text-align: justify;
+    background-color: #F2E9E4;
+    border: 3px solid #22223B;
+    color: #22223B;
+    width: 100%;
+    margin: 15px 0px 10px 0px;
+    padding: 12px;
+    border-radius: 6px;
+    height: 150px;
+    box-sizing: border-box;
+    transition-duration: 0.4s;
+    font-size: 16px;
+    resize: none;
+}
+.commentModifyTextArea:focus {
+    height: 200px;
+}
+.comment--btn--modify {
+    display: flex;
+    justify-content: center;
+
+}
