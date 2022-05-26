@@ -197,37 +197,39 @@ function Post() {
           <div className="post--username">{post.username}</div>
           <h1 className="post--title">{post.title}</h1>
           <p className="post--text">{post.postText}</p>
-          <div className="like--box">
-            <span
-              className="like--style"
-              onClick={() => handleLike(id, userValue.token, true)}
-            >
-              <FontAwesomeIcon icon={faThumbsUp} /> {calcLikes(likes, 1)}
-            </span>
-            <span
-              className="dislike--style"
-              onClick={() => handleLike(id, userValue.token, false)}
-            >
-              <FontAwesomeIcon icon={faThumbsDown} /> {calcLikes(likes, 0)}
-            </span>
-            {(post.userId === userValue.id || userValue.admin === 1) && (
-              <>
-                <div className="btn--post">
-                  <Link
-                    to={`/post/${post.id}/modify`}
-                    className="modify--style"
-                  >
-                    <FontAwesomeIcon icon={faEdit} />
-                  </Link>
-                  <button
-                    className="modify--style"
-                    onClick={() => deletePost(post.id)}
-                  >
-                    <FontAwesomeIcon icon={faTrashCan} />
-                  </button>
-                </div>
-              </>
-            )}
+          <div className="post--btn--container">
+            <div className="like--box">
+              <span
+                className="like--style"
+                onClick={() => handleLike(id, userValue.token, true)}
+              >
+                <FontAwesomeIcon icon={faThumbsUp} /> {calcLikes(likes, 1)}
+              </span>
+              <span
+                className="dislike--style"
+                onClick={() => handleLike(id, userValue.token, false)}
+              >
+                <FontAwesomeIcon icon={faThumbsDown} /> {calcLikes(likes, 0)}
+              </span>
+            </div>
+              {(post.userId === userValue.id || userValue.admin === 1) && (
+                <>
+                  <div className="btn--post">
+                    <Link
+                      to={`/post/${post.id}/modify`}
+                      className="modify--style"
+                    >
+                      <FontAwesomeIcon icon={faEdit} />
+                    </Link>
+                    <button
+                      className="modify--style"
+                      onClick={() => deletePost(post.id)}
+                    >
+                      <FontAwesomeIcon icon={faTrashCan} />
+                    </button>
+                  </div>
+                </>
+              )}
           </div>
         </div>
       </div>

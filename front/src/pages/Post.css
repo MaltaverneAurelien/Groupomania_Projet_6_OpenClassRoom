@@ -162,9 +162,37 @@ margin-left: auto;
     border: 3px solid #4A4E69;
     color: #729b79;
 }
+.post--btn--container {
+    display: flex;
+}
 /**************** Media Queries ****************/
 @media screen and (max-width: 750px) {
     .post--box, .comment--box, .comment--list {
         width: 90%;
+    }
+    .post--btn--container {
+        flex-direction: column;
+    }
+    .post--box {
+        height: inherit;
+        flex-direction: column;
+    }
+    .like--box {
+        justify-content: center;
+    }
+    .btn--post {
+        justify-content: center;
+    }
+    .post--image--container {
+        width: 100%;
+        height: 30%;
+    }
+    .post--text--container {
+        width: 90%;
+        height: 40%;
+    }
+    .modify--style {
+        width: inherit;
+        padding: 15px;
     }
 }
