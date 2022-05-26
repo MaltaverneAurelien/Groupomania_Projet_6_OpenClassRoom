@@ -33,6 +33,12 @@
     font-weight: bold;
     font-size: 16px;
 }
+.post--date {
+    color: #4A4E69;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: auto;
+  }
 .post--title {
     color: #22223B;
     font-weight: bold;

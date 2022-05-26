@@ -150,6 +150,12 @@ function Home() {
       date.getFullYear(),
     ].join(".");
   }
+  function formatHeure(hours) {
+    return [
+      padTo2Digits(" " + hours.getHours() + "h"),
+      padTo2Digits(hours.getMinutes()),
+    ];
+  }
   return (
     <div className="home">
       <img src="/images/icon_nav.svg" className="home--logo" />
@@ -187,10 +193,9 @@ function Home() {
                         {post.username}
                       </div>
                       <div className="home--post--date">
-                        {formatDate(new Date(post.updateAt))}
+                        {formatDate(new Date(post.updateAt))}{formatHeure(new Date(post.updateAt))}
                       </div>
                     </div>
-
                     <span className="home--post--title">{post.title}</span>
                     <p className="home--post--text">{post.postText}</p>
                   </Link>

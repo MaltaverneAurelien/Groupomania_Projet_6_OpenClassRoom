@@ -178,6 +178,12 @@ function Post() {
       date.getFullYear(),
     ].join(".");
   }
+  function formatHeure(hours) {
+    return [
+      padTo2Digits(" " + hours.getHours() + "h"),
+      padTo2Digits(hours.getMinutes()),
+    ];
+  }
   return (
     <div className="onePost">
       <button className="onePostTitre">
@@ -194,7 +200,13 @@ function Post() {
           )}
         </div>
         <div className="post--text--container">
-          <div className="post--username">{post.username}</div>
+          <div className="home--post--username--container">
+            <div className="post--username">{post.username}</div>
+            <div className="post--date">
+              {formatDate(new Date(post.updateAt))}
+              {formatHeure(new Date(post.updateAt))}
+            </div>
+          </div>
           <h1 className="post--title">{post.title}</h1>
           <p className="post--text">{post.postText}</p>
           <div className="post--btn--container">
@@ -212,24 +224,24 @@ function Post() {
                 <FontAwesomeIcon icon={faThumbsDown} /> {calcLikes(likes, 0)}
               </span>
             </div>
-              {(post.userId === userValue.id || userValue.admin === 1) && (
-                <>
-                  <div className="btn--post">
-                    <Link
-                      to={`/post/${post.id}/modify`}
-                      className="modify--style"
-                    >
-                      <FontAwesomeIcon icon={faEdit} />
-                    </Link>
-                    <button
-                      className="modify--style"
-                      onClick={() => deletePost(post.id)}
-                    >
-                      <FontAwesomeIcon icon={faTrashCan} />
-                    </button>
-                  </div>
-                </>
-              )}
+            {(post.userId === userValue.id || userValue.admin === 1) && (
+              <>
+                <div className="btn--post">
+                  <Link
+                    to={`/post/${post.id}/modify`}
+                    className="modify--style"
+                  >
+                    <FontAwesomeIcon icon={faEdit} />
+                  </Link>
+                  <button
+                    className="modify--style"
+                    onClick={() => deletePost(post.id)}
+                  >
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -259,6 +271,7 @@ function Post() {
               </div>
               <div className="comment--list--date">
                 {formatDate(new Date(comment.updateAt))}
+                {formatHeure(new Date(comment.updateAt))}
               </div>
             </div>
             <p className="comment--list--text">{comment.text}</p>
