@@ -41,3 +41,13 @@
     border: 2px solid #9A8C98;
     color: #F2E9E4;
   }
+  /**************** Media Queries ****************/
+@media screen and (max-width: 750px) {
+  .login--col-15 {
+    width: inherit;
+  }
+  .login--col-75 {
+    float: inherit;
+    width: 80%;
+  }
+}
