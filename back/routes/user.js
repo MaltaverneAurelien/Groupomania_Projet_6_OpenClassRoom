@@ -11,6 +11,7 @@ router.post('/login', limiter.loginLimiter, userCtrl.login);
 router.get('/userInfo', validateToken, userCtrl.userInfo);
 router.post('/profileImg', validateToken, multer, userCtrl.profileImg);
 router.get('/:id/avatar', userCtrl.avatar);
+// router.get('/profile/:id/delete', userCtrl.userDelete);
 router.post('/modifyPassword', validateToken, userCtrl.modifyPassword);
 
 module.exports = router;

@@ -10,18 +10,18 @@ function Profile() {
   const navigate = useNavigate();
 
   /**
-   * Permet de supprimer un post
+   * Permet de supprimer un utilisateur
    */
-  async function userDelete(id) {
-    const res = await fetch(
-      `http://localhost:8000/api/user/profile/${id}/delete`
-    );
+  // async function userDelete(id) {
+  //   const res = await fetch(
+  //     `http://localhost:8000/api/user/profile/${id}/delete`
+  //   );
 
-    if (res.ok) {
-      navigate("/");
-    }
-    toastInfo("L'utilisateur a été suprimmé !");
-  }
+  //   if (res.ok) {
+  //     navigate("/");
+  //   }
+  //   toastInfo("L'utilisateur a été suprimmé !");
+  // }
   return (
     <div className="profile--container">
       <div className="profile--contact">
@@ -38,10 +38,7 @@ function Profile() {
           {userValue.admin === 1 && (
             <>
               <div className="profile--btn">
-                <button
-                  className="profile--delete--btn"
-                  
-                >
+                <button className="profile--delete--btn">
                   <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </div>

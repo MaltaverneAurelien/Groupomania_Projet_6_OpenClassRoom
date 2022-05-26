@@ -7,6 +7,7 @@ const getUserByUsername = require('../db/getUserByUsername');
 const getUserById = require('../db/getUserById');
 const profileImgDb = require('../db/profileImgDB');
 const modifyPasswordUser = require('../db/modifyPasswordUser');
+const deleteUserDb = require('../db/deleteUserDb');
 
 // Enregistrer un compte utilisateur
 exports.signup = async (req, res) => {
@@ -109,7 +110,6 @@ exports.avatar = async (req, res) => {
   }
   res.status(200).sendFile(user.image, { root: "./images" });
 }
-
 // modifier le password de l'utilisateur
 exports.modifyPassword = async (req, res) => {
   const { oldPassword, newPassword } = req.body
@@ -146,3 +146,17 @@ exports.modifyPassword = async (req, res) => {
     res.status(200).json({})
     console.log("Mot de passe modifié !"); 
 }
+// Supprime un compte utilisateur
+// exports.userDelete = async (req,res) => {
+//   const deletedUser = await deleteUserDb(req.params.id).catch(error => {
+//     console.log(error)
+//     res.status(500).json({
+//       error
+//     })
+//     return null
+//   })
+
+//   if (deletedUser === null) return
+//   console.log("Utilisateur supprimé !");
+//   res.sendStatus(200)
+// }

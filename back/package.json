@@ -18,7 +18,9 @@
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.4",
     "mysql": "github:mysqljs/mysql",
+    "npm": "^8.11.0",
     "password-validator": "^5.3.0",
-    "react-use-password-validator": "^0.0.1"
+    "react-use-password-validator": "^0.0.1",
+    "start": "^5.1.0"
   }
 }

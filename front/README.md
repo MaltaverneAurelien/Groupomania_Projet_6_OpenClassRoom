@@ -12,7 +12,8 @@ Les technologies utilisés :
 Pour le backend :
 
 - cd back
-- nodemon server.js
+- npm install
+- npm start
 
 Pour le frontend :
 
