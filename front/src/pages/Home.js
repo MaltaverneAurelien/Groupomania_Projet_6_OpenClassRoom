@@ -9,7 +9,6 @@ import {
   faEdit,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
-//import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { toastErr, toastInfo } from "../lib/toast";
 import "./Home.css";
 

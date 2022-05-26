@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { toastErr, toastInfo, toastSuccess } from "../lib/toast";
-import "./Settings.css";
+import "./Profile.css";
 
-function Settings() {
+function Profile() {
   const userValue = useSelector((state) => state.user.value);
   const [file, setFile] = useState(null);
   const [oldPassword, setOldPassword] = useState("");
@@ -67,31 +67,30 @@ function Settings() {
   }
 
   return (
-    <div className="settings--container">
-      <h1 className="settings--titre">Mes paramètres :</h1>
+    <div className="profile--container">
       <img
         src={`http://localhost:8000/api/user/${userValue.id}/avatar`}
         alt="Avatar"
-        className="avatar--settings"
+        className="avatar--profile"
       />
-      <div className="row--settings">
-        <div className="settings--col-15">
+      <div className="row--profile">
+        <div className="profile--col-15">
           <div>Nom :</div>
         </div>
-        <div className="settings--col-75">
+        <div className="profile--col-75">
           <div>{userValue.username}</div>
         </div>
       </div>
-      <div className="row--settings">
-        <div className="settings--col-15">
+      <div className="row--profile">
+        <div className="profile--col-15">
           <div>Adresse Mail :</div>
         </div>
-        <div className="settings--col-75">
+        <div className="profile--col-75">
           <div>{userValue.email}</div>
         </div>
       </div>
-      <div className="row--settings">
-        <div className="settings--col-15">
+      <div className="row--profile">
+        <div className="profile--col-15">
           <label htmlFor="title">Image :</label>
         </div>
         <form onSubmit={handleForm} className="form--settings--image">
@@ -108,7 +107,7 @@ function Settings() {
         </form>
         {file && (
           <>
-            <div className="row--avatar--settings">
+            <div className="row--avatar--profile">
               <img
                 src={URL.createObjectURL(file)}
                 alt="Avatar"
@@ -119,9 +118,9 @@ function Settings() {
         )}
       </div>
       <form onSubmit={handleModifyPassword}>
-        <div className="row--settings">
-          <div className="settings--col-15">
-            Ancien Password :
+        <div className="row--profile">
+          <div className="profile--col-15">
+            <div htmlFor="password">Ancien Password :</div>
           </div>
           <div className="signup--col-75">
             <input
@@ -133,9 +132,9 @@ function Settings() {
             />
           </div>
         </div>
-        <div className="row--settings">
-          <div className="settings--col-15">
-            Nouveau Password :
+        <div className="row--profile">
+          <div className="profile--col-15">
+            <div htmlFor="password">Nouveau Password :</div>
           </div>
           <div className="signup--col-75">
             <input
@@ -147,11 +146,11 @@ function Settings() {
             />
           </div>
         </div>
-        <div className="row--settings">
-          <div className="settings--col-15">
-            Modifier Password :
+        <div className="row--profile">
+          <div className="profile--col-15">
+            <label htmlFor="password">Modifier Password :</label>
           </div>
-          <div className="row--submit--settings">
+          <div className="row--submit--profile">
             <button className="btn--modify">Modifier</button>
           </div>
         </div>
@@ -160,4 +159,4 @@ function Settings() {
   );
 }
 
-export default Settings;
+export default Profile;

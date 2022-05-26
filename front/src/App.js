@@ -8,6 +8,7 @@ import ModifyComment from "./pages/ModifyComment";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
 
 import { useDispatch } from 'react-redux';
 import { updateToken, UpdateData } from './store/userSlice';
@@ -40,6 +41,7 @@ function App() {
           <Route className="form" path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
 
+          <Route path="profile" element={<Profile />} />
           <Route path="profile/settings" element={<Settings />} />
 
           <Route path="posts/create" element={<CreatePost />} />

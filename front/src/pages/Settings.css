@@ -1,22 +1,22 @@
 /**************** PROFILE ****************/
-.profile--titre {
+.settings--titre {
   margin: 0px 0px 25px 0px;
   color: #F2E9E4;
 }
-.row--profile {
+.row--settings {
   display: flex;
   align-items: center;
   margin-top: 25px;
 }
-.row--avatar--profile {
+.row--avatar--settings {
   display: flex;
 }
-.profile--col-15 {
+.settings--col-15 {
   color: #F2E9E4;
   font-weight: bold;
   width: 15%;
 }
-.profile--col-75 {
+.settings--col-75 {
   background-color: #22223B;
   border: 3px solid #F2E9E4;
   color: #F2E9E4;
@@ -87,7 +87,7 @@
   color: #22223B;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-img.avatar--profile {
+img.avatar--settings {
   width: 75px;
   height: 75px;
   border-radius: 50%;
@@ -96,13 +96,14 @@ img.avatar--profile {
 }
 /**************** Media Queries ****************/
 @media screen and (max-width: 750px) {
-  .row--profile {
+  .row--settings {
     display: block;
   }
-  .profile--col-15 {
-    width: inherit;
+  .settings--col-15 {
+    width: 90%;
+    margin-bottom: 20px;
   }
-  .profile--col-75 {
+  .settings--col-75 {
     width: 90%;
     margin-top: 20px;
   }

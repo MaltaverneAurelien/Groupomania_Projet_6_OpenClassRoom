@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { updateToken, UpdateData } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 
 function Navbar() {
@@ -36,7 +38,12 @@ function Navbar() {
               />
             </li>
             <li>
-              <Link to="/profile/settings">{userValue.username}</Link>
+              <Link to="/profile">{userValue.username}</Link>
+            </li>
+            <li>
+              <Link to="/profile/settings">
+                <FontAwesomeIcon icon={faCog} />
+              </Link>
             </li>
             <li onClick={disconnect}>
               <Link to="home">Déconnexion</Link>
