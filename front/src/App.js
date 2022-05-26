@@ -9,7 +9,6 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
-
 import { useDispatch } from 'react-redux';
 import { updateToken, UpdateData } from './store/userSlice';
 import { ToastContainer } from "react-toastify";

@@ -67,7 +67,6 @@ exports.image = async (req, res) => {
  * Supprimer un post
  */
  exports.deletePost = async (req, res) => {
-  //  if user.id === post.id || user.admin === 1
   const deletedPost = await deletePostDb(req.params.id).catch(error => {
     console.log(error)
     res.status(500).json({

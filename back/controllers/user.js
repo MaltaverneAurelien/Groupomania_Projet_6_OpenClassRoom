@@ -7,7 +7,7 @@ const getUserByUsername = require('../db/getUserByUsername');
 const getUserById = require('../db/getUserById');
 const profileImgDb = require('../db/profileImgDB');
 const modifyPasswordUser = require('../db/modifyPasswordUser');
-const deleteUserDb = require('../db/deleteUserDb');
+// const deleteUserDb = require('../db/deleteUserDb');
 
 // Enregistrer un compte utilisateur
 exports.signup = async (req, res) => {
