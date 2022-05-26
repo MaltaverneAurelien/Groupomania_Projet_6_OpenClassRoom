@@ -94,7 +94,7 @@ function Profile() {
         <div className="profile--col-15">
           <label htmlFor="title">Image :</label>
         </div>
-        <form onSubmit={handleForm}>
+        <form onSubmit={handleForm} className="form--settings--image">
           <label className="btn--download">
             <input
               type="file"

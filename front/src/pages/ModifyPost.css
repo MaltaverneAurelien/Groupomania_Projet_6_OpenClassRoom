@@ -76,6 +76,26 @@ img.image--modify {
     border-radius: 6px;
     filter: drop-shadow(5px 10px 15px #22223B);
 }
-/* @media screen and (max-width: 750px) {
-
-} */
+/**************** Media Queries ****************/
+@media screen and (max-width: 750px) {
+  .row-modify {
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+  }
+  .modifyTextArea {
+    width: 300px;
+    height: 200px;
+  }
+  .modifyPost--titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modifyPost--text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+}

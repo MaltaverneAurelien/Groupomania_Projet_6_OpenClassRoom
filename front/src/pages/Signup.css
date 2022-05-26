@@ -64,6 +64,7 @@ label {
   border: 2px solid #9A8C98;
   color: #F2E9E4;
 }
+/**************** Media Queries ****************/
 @media screen and (max-width: 750px) {
   .signup--col-15, .signup--col-75 {
     width: 90%;

@@ -94,8 +94,22 @@ img.avatar--profile {
   border: 2px solid #F2E9E4;
   filter: drop-shadow(5px 10px 15px #22223B);
 }
-/* @media screen and (max-width: 750px) {
-  .profile--container {
-
+/**************** Media Queries ****************/
+@media screen and (max-width: 750px) {
+  .row--profile {
+    display: block;
   }
-} */
+  .profile--col-15 {
+    width: inherit;
+  }
+  .profile--col-75 {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .form--settings--image {
+    display: flex;
+  }
+  .btn--upload {
+    margin: 0px 15px 0px 15px;
+  }
+}
