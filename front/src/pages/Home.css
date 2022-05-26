@@ -132,7 +132,7 @@
   transition-duration: 0.4s;
 }
 .btn--home--user:hover {
-  background-color: #22223B;
+  background-color: FD;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   border: 2px solid #9A8C98;
   color: #F2E9E4;

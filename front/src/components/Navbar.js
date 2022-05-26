@@ -38,7 +38,7 @@ function Navbar() {
               />
             </li>
             <li>
-              <Link to="/profile">{userValue.username}</Link>
+              <Link to={`/profile/${userValue.id}`}>{userValue.username}</Link>
             </li>
             <li>
               <Link to="/profile/settings">

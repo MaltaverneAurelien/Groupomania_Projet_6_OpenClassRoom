@@ -41,7 +41,7 @@ function App() {
           <Route className="form" path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
 
-          <Route path="profile" element={<Profile />} />
+          <Route path="profile/:id" element={<Profile />} />
           <Route path="profile/settings" element={<Settings />} />
 
           <Route path="posts/create" element={<CreatePost />} />

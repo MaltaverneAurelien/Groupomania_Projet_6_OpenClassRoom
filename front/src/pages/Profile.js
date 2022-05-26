@@ -1,160 +1,110 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { toastErr, toastInfo, toastSuccess } from "../lib/toast";
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "./Profile.css";
 
 function Profile() {
   const userValue = useSelector((state) => state.user.value);
-  const [file, setFile] = useState(null);
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  const [posts, setPosts] = useState([]);
 
-  function handleOldPassword(e) {
-    setOldPassword(e.target.value);
-  }
-  function handleNewPassword(e) {
-    setNewPassword(e.target.value);
-  }
+  useEffect(() => {
+    /**
+     * Renvoyer le nombre de posts
+     */
+    async function fetchPosts() {
+      const res = await fetch("http://localhost:8000/api/posts");
+      const data = await res.json();
 
-  async function handleModifyPassword(e) {
-    e.preventDefault();
-    if (oldPassword === newPassword) {
-      toastErr("Les mots de passes sont identiques !");
-      return;
+      setPosts(data);
     }
-    const res = await fetch("http://localhost:8000/api/user/modifyPassword", {
-      method: "POST",
-      body: JSON.stringify({
-        oldPassword: oldPassword,
-        newPassword: newPassword,
-      }),
-      headers: {
-        "Content-type": "application/json",
-        authorization: "Bearer " + userValue.token,
-      },
-    });
-    if (!res.ok) {
-      return
-    }
-    toastSuccess("Mot de passe changé !");
+    fetchPosts();
+  }, []);
+  /**
+   * Rajoute un 0 au début du nombre si < 10
+   * @param {number} num
+   */
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, "0");
   }
 
-  function handleFile(e) {
-    setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
+  /**
+   * Formate la date au format DD.MM.YYYY
+   */
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join(".");
   }
-
-  async function handleForm(e) {
-    e.preventDefault();
-
-    const form = new FormData();
-    form.append("image", file);
-
-    const res = await fetch("http://localhost:8000/api/user/profileImg", {
-      method: "POST",
-      body: form,
-      headers: {
-        authorization: "Bearer " + userValue.token,
-      },
-    });
-
-    if (!res.ok) {
-      toastErr("Il y a un problème sur l'upload de l'image");
-      return;
-    }
-
-    toastInfo("L'image de profil a été publié");
+  function formatHeure(hours) {
+    return [
+      padTo2Digits(" " + hours.getHours() + "h"),
+      padTo2Digits(hours.getMinutes()),
+    ];
   }
-
   return (
     <div className="profile--container">
-      <img
-        src={`http://localhost:8000/api/user/${userValue.id}/avatar`}
-        alt="Avatar"
-        className="avatar--profile"
-      />
-      <div className="row--profile">
-        <div className="profile--col-15">
-          <div>Nom :</div>
-        </div>
-        <div className="profile--col-75">
-          <div>{userValue.username}</div>
+      <div className="profile--contact">
+        <img
+          src={`http://localhost:8000/api/user/${userValue.id}/avatar`}
+          alt="Avatar"
+          className="avatar--profile"
+        />
+        <div className="row--profile--container">
+          <div className="name--profile">{userValue.username}</div>
+          <div className="email--profile">{userValue.email}</div>
+          {userValue.admin === 1 && (
+            <>
+              <div className="btn--post">
+                <button className="modify--style">
+                  <FontAwesomeIcon icon={faTrashCan} />
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
-      <div className="row--profile">
-        <div className="profile--col-15">
-          <div>Adresse Mail :</div>
-        </div>
-        <div className="profile--col-75">
-          <div>{userValue.email}</div>
-        </div>
+      <div className="profile--post">
+        <>
+          {posts
+            .sort((a, b) => b.id - a.id)
+            .map((post) => (
+              <>
+                <div className="profile--post--user">
+                  {post.image && (
+                    <div className="profile--post--image">
+                      <Link to={`/post/${post.id}`}>
+                        <img
+                          className="home--image"
+                          src={`http://localhost:8000/api/posts/${post.id}/image`}
+                          alt="Image du post"
+                        />
+                      </Link>
+                    </div>
+                  )}
+                  <div className="profile--post--text">
+                    <Link to={`/post/${post.id}`} className="home--link">
+                      <div className="home--post--username--container">
+                        <div className="home--post--username">
+                          {post.username}
+                        </div>
+                        <div className="home--post--date">
+                          {formatDate(new Date(post.updateAt))}
+                          {formatHeure(new Date(post.updateAt))}
+                        </div>
+                      </div>
+                      <span className="home--post--title">{post.title}</span>
+                      <p className="home--post--text">{post.postText}</p>
+                    </Link>
+                  </div>
+                </div>
+              </>
+            ))}
+        </>
       </div>
-      <div className="row--profile">
-        <div className="profile--col-15">
-          <label htmlFor="title">Image :</label>
-        </div>
-        <form onSubmit={handleForm} className="form--settings--image">
-          <label className="btn--download">
-            <input
-              type="file"
-              className="input--file"
-              accept="image/png, image/jpeg"
-              onChange={handleFile}
-            />
-            Choisir un fichier
-          </label>
-          <button className="btn--upload">Upload Image</button>
-        </form>
-        {file && (
-          <>
-            <div className="row--avatar--profile">
-              <img
-                src={URL.createObjectURL(file)}
-                alt="Avatar"
-                className="avatar--profile"
-              />
-            </div>
-          </>
-        )}
-      </div>
-      <form onSubmit={handleModifyPassword}>
-        <div className="row--profile">
-          <div className="profile--col-15">
-            <div htmlFor="password">Ancien Password :</div>
-          </div>
-          <div className="signup--col-75">
-            <input
-              type="password"
-              name="oldPassword"
-              value={oldPassword}
-              onChange={handleOldPassword}
-              placeholder="Votre ancien mot de passe"
-            />
-          </div>
-        </div>
-        <div className="row--profile">
-          <div className="profile--col-15">
-            <div htmlFor="password">Nouveau Password :</div>
-          </div>
-          <div className="signup--col-75">
-            <input
-              type="password"
-              name="newPassword"
-              value={newPassword}
-              onChange={handleNewPassword}
-              placeholder="Votre nouveau mot de passe"
-            />
-          </div>
-        </div>
-        <div className="row--profile">
-          <div className="profile--col-15">
-            <label htmlFor="password">Modifier Password :</label>
-          </div>
-          <div className="row--submit--profile">
-            <button className="btn--modify">Modifier</button>
-          </div>
-        </div>
-      </form>
     </div>
   );
 }
