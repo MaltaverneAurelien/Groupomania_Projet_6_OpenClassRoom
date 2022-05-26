@@ -196,25 +196,29 @@ function Home() {
                     <p className="home--post--text">{post.postText}</p>
                   </Link>
                   <div className="home--post--btn">
-                    <span className="comment--style">
-                      <FontAwesomeIcon icon={faComment} /> {post.comments}
-                    </span>
-                    <span
-                      className="like--style"
-                      onClick={() => handleLike(post.id, userValue.token, true)}
-                    >
-                      <FontAwesomeIcon icon={faThumbsUp} />{" "}
-                      {calcLikes(post.likes, 1)}
-                    </span>
-                    <span
-                      className="dislike--style"
-                      onClick={() =>
-                        handleLike(post.id, userValue.token, false)
-                      }
-                    >
-                      <FontAwesomeIcon icon={faThumbsDown} />{" "}
-                      {calcLikes(post.likes, 0)}
-                    </span>
+                    <div className="home-mobile--btn">
+                      <span className="comment--style">
+                        <FontAwesomeIcon icon={faComment} /> {post.comments}
+                      </span>
+                      <span
+                        className="like--style"
+                        onClick={() =>
+                          handleLike(post.id, userValue.token, true)
+                        }
+                      >
+                        <FontAwesomeIcon icon={faThumbsUp} />{" "}
+                        {calcLikes(post.likes, 1)}
+                      </span>
+                      <span
+                        className="dislike--style"
+                        onClick={() =>
+                          handleLike(post.id, userValue.token, false)
+                        }
+                      >
+                        <FontAwesomeIcon icon={faThumbsDown} />{" "}
+                        {calcLikes(post.likes, 0)}
+                      </span>
+                    </div>
                     {(post.userId === userValue.id ||
                       userValue.admin === 1) && (
                       <>

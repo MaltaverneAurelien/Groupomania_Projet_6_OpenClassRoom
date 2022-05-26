@@ -1,4 +1,3 @@
-const { comment } = require("../controllers/posts");
 const { query } = require("./index")
 
 /**
