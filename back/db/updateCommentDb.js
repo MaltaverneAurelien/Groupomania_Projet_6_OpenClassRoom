@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction pour recuperer tout les posts des utilisateurs grâce a la bd
+ * Fonction pour modifier le commentaire
  */
 async function updateCommentDb(text, id) {
     await query("UPDATE comments SET text = ? WHERE id = ?;", [text, id])

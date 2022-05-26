@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction qui permet de vérifier si l'username est déjà présent dans la db
+ * Fonction qui permet de modifier le password de l'utilisateur
  */
 async function modifyPasswordUser(id, password) {
     const rows = await query(

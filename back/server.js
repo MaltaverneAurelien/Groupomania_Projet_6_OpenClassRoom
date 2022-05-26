@@ -34,6 +34,5 @@ app.listen(PORT, async () => {
   console.log("Listening on: http://localhost:" + PORT);
 });
 
-
 app.use('/api/user', userRoutes);
 app.use('/api/posts', postsRoutes);

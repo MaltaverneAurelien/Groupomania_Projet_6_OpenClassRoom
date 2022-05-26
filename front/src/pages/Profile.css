@@ -8,17 +8,20 @@
     background-color: #22223B;
     border: 3px solid #F2E9E4;
     border-radius: 6px;
-    width: 400px;
-    height: 200px;
+    width: 500px;
+    height: 250px;
     padding: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     box-sizing: border-box;
 }
-.row--profile--container {
+.row--profile--text--container {
     width: 55%;
     padding: 10px;
+}
+.text--profile {
+    height: 70%;
 }
 .name--profile {
     color: #F2E9E4;
@@ -62,6 +65,30 @@ img.avatar--profile {
     width: 50%;
     padding: 20px;
   }
+/**************** PROFILE BOUTTON ****************/
+.profile--btn {
+    display: flex;
+    float: right;
+    height: 30%;
+}
+.profile--delete--btn {
+    background-color: #4A4E69;
+    border: 3px solid #C9ADA7;
+    color: #F2E9E4;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.profile--delete--btn:hover {
+    background-color: #F2E9E4;
+    border: 3px solid #4A4E69;
+    color: #729b79;
+}
 /**************** Media Queries ****************/
 @media screen and (max-width: 750px) {
     .profile--contact {

@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction pour recuperer tout les posts des utilisateurs grâce a la bd
+ * Fonction pour modifier un post
  */
 async function updatePostDb(title, postText, image, id) {
     if(image === undefined) {

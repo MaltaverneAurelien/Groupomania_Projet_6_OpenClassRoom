@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction qui permet d'ajouter l'username, l'email et le password à la db
+ * Fonction qui permet d'ajouter l'username, l'email et le password à la bdd utilisateur
  */
 async function createUser(username, email, password) {
   const inserted = await query("INSERT INTO utilisateur (username, email, password, admin) VALUES (?, ?, ?, false);", [username, email, password])

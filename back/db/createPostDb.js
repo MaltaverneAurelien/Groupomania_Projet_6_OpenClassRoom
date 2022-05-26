@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction pour recuperer tout les posts des utilisateurs grâce a la bd
+ * Fonction qui permet d'ajouter le titre, le texte et l'image à la bdd post
  */
 async function createPostDb(title, postText, userId, image) {
     const inserted = await query("INSERT INTO posts (title, postText, userId, image) VALUES (?, ?, ?, ?);", [title, postText, userId, image])

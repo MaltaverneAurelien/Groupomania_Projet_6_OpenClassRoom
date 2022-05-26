@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction pour retirer un commentaire de l'utilisateur
+ * Fonction pour supprimer un post (on supprime les commentaires et likes en amont)
  */
 async function deletePostDb(id) {
     await query(`DELETE FROM comments WHERE postId=?;`, [id])

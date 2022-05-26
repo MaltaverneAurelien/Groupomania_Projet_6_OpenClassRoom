@@ -1,7 +1,7 @@
 const { query } = require("./index")
 
 /**
- * Fonction pour recuperer tout les commentaires d'un post de la db
+ * Fonction pour recuperer tout les likes d'un post de la db
  */
 async function getAllLikesDb(id) {
     const rows = await query(
