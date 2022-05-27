@@ -6,6 +6,9 @@ Les technologies utilisés :
 - Express
 - MySQL Workbench
 - React
+- React Router
+- Redux
+- Toastify
 
 ## Installation, lancer l'application sur votre ordinateur
 
@@ -13,7 +16,7 @@ Pour le backend :
 
 - cd back
 - npm install
-- npm start
+- npm run start
 
 Pour le frontend :
 
