@@ -171,7 +171,9 @@ function Home() {
       </div>
       <>
         {posts
-          .sort((a, b) => b.id - a.id)
+          .sort(function(a, b){
+            return new Date(b.updateAt) - new Date(a.updateAt);
+          })
           .map((post) => (
             <>
               <div className="home--post--user">

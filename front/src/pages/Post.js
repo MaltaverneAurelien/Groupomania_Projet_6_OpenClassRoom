@@ -37,7 +37,7 @@ function Post() {
       const res = await fetch(`http://localhost:8000/api/posts/${id}/comments`);
       const data = await res.json();
       console.log(data[0]);
-      setComments(data.sort((a, b) => b.id - a.id));
+      setComments(data.sort((a, b) => new Date(b.updateAt) - new Date(a.updateAt)));
     }
     /**
      * Récupère les likes du post
